@@ -1,6 +1,6 @@
-# Control Vial - Demo San Pedro Garza García
+# Control Vial - 
 
-Demo de plataforma móvil para el sistema de control vehicular del municipio de San Pedro Garza García.
+Demo de plataforma móvil para el sistema de control vehicular del municipio.
 
 ## Características
 
