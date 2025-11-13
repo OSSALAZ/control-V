@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Control Vial - San Pedro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de Login/Registro -->
+    <div id="login-screen" class="screen active">
+        <div class="login-container">
+            <div class="logo-container">
+                <img src="Assets/logo.png" alt="San Pedro Logo" class="logo">
+            </div>
+            <h1 class="app-title">Control Vial</h1>
+            <p class="app-subtitle">San Pedro Garza García</p>
+            
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+                <button class="btn-primary" onclick="login()">Iniciar Sesión</button>
+                <button class="btn-secondary" onclick="showRegister()">Crear Cuenta</button>
+                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla de Registro -->
+    <div id="register-screen" class="screen">
+        <div class="header">
+            <button class="btn-back" onclick="showLogin()">←</button>
+            <h2>Registro</h2>
+        </div>
+        <div class="content">
+            <form id="register-form" onsubmit="register(event)">
+                <div class="form-group">
+                    <label for="reg-names">Nombres</label>
+                    <input type="text" id="reg-names" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-paternal">Apellido Paterno</label>
+                    <input type="text" id="reg-paternal" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-maternal">Apellido Materno</label>
+                    <input type="text" id="reg-maternal" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-curp">CURP</label>
+                    <input type="text" id="reg-curp" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-rfc">RFC (Opcional)</label>
+                    <input type="text" id="reg-rfc">
+                </div>
+                <div class="form-group">
+                    <label for="reg-phone">Teléfono</label>
+                    <input type="tel" id="reg-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Correo electrónico</label>
+                    <input type="email" id="reg-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Contraseña</label>
+                    <input type="password" id="reg-password" required>
+                </div>
+                <button type="submit" class="btn-primary">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pantalla Principal (Dashboard) -->
+    <div id="main-screen" class="screen">
+        <div class="header">
+            <div class="header-content">
+                <img src="Assets/logo.png" alt="Logo" class="header-logo">
+                <div class="user-info">
+                    <span class="user-name" id="user-name">Usuario</span>
+                    <span class="user-email" id="user-email">usuario@email.com</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="welcome-card">
+                <h2>Bienvenido</h2>
+                <p>Gestiona tus vehículos y solicita tu tag RFID para circular por las calles del municipio</p>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-card" onclick="showMyAccount()">
+                    <div class="menu-icon">👤</div>
+                    <h3>Mi Cuenta</h3>
+                    <p>Datos personales y direcciones</p>
+                </div>
+                <div class="menu-card" onclick="showVehicles()">
+                    <div class="menu-icon">🚗</div>
+                    <h3>Mis Vehículos</h3>
+                    <p>Registra y gestiona tus vehículos</p>
+                </div>
+                <div class="menu-card" onclick="showCenters()">
+                    <div class="menu-icon">📍</div>
+                    <h3>Centros de Atención</h3>
+                    <p>Ubicaciones y horarios</p>
+                </div>
+                <div class="menu-card" onclick="showTagRequest()">
+                    <div class="menu-icon">🏷️</div>
+                    <h3>Solicitar Tag</h3>
+                    <p>Obtén tu etiqueta RFID</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <button class="nav-item active" onclick="showMain()">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Inicio</span>
+            </button>
+            <button class="nav-item" onclick="showVehicles()">
+                <span class="nav-icon">🚗</span>
+                <span class="nav-label">Vehículos</span>
+            </button>
+            <button class="nav-item" onclick="showCenters()">
+                <span class="nav-icon">📍</span>
+                <span class="nav-label">Centros</span>
+            </button>
+            <button class="nav-item" onclick="showMyAccount()">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Cuenta</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Pantalla Mi Cuenta -->
+    <div id="account-screen" class="screen">
+        <div class="header">
+            <button class="btn-back" onclick="showMain()">←</button>
+            <h2>Mi Cuenta</h2>
+        </div>
+        <div class="content">
+            <div class="account-section">
+                <h3>Datos Personales</h3>
+                <div class="info-card">
+                    <div class="info-row">
+                        <span class="info-label">Nombre completo:</span>
+                        <span class="info-value" id="account-name">Juan Pérez García</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">CURP:</span>
+                        <span class="info-value" id="account-curp">PEGJ850101HDFRRN01</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Teléfono:</span>
+                        <span class="info-value" id="account-phone">+52 81 1234 5678</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value" id="account-email">usuario@email.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="account-section">
+                <div class="section-header">
+                    <h3>Mis Direcciones</h3>
+                    <button class="btn-small" onclick="showAddAddress()">+ Agregar</button>
+                </div>
+                <div class="address-list" id="address-list">
+                    <!-- Lista de direcciones se carga dinámicamente -->
+                </div>
+            </div>
+
+            <button class="btn-secondary" onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <!-- Pantalla Agregar/Editar Dirección -->
+    <div id="address-form-screen" class="screen">
+        <div class="header">
+            <button class="btn-back" onclick="showMyAccount()">←</button>
+            <h2 id="address-form-title">Agregar Dirección</h2>
+        </div>
+        <div class="content">
+            <form id="address-form" onsubmit="saveAddress(event)">
+                <div class="form-group">
+                    <label for="address-predial">Número de Predial</label>
+                    <input type="text" id="address-predial" placeholder="12345-67890" required>
+                    <small>Con este número podemos obtener automáticamente los datos de la propiedad</small>
+                </div>
+                <div class="form-group">
+                    <label for="address-street">Calle</label>
+                    <input type="text" id="address-street" placeholder="Av. Ejemplo" required>
+                </div>
+                <div class="form-group">
+                    <label for="address-exterior">Número Exterior</label>
+                    <input type="text" id="address-exterior" placeholder="123" required>
+                </div>
+                <div class="form-group">
+                    <label for="address-interior">Número Interior (Opcional)</label>
+                    <input type="text" id="address-interior" placeholder="A">
+                </div>
+                <div class="form-group">
+                    <label for="address-name">Nombre de la dirección (Opcional)</label>
+                    <input type="text" id="address-name" placeholder="Casa, Oficina, etc.">
+                    <small>Útil para identificar múltiples direcciones</small>
+                </div>
+                <button type="submit" class="btn-primary">Guardar Dirección</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pantalla de Vehículos -->
+    <div id="vehicles-screen" class="screen">
+        <div class="header">
+            <button class="btn-back" onclick="showMain()">←</button>
+            <h2>Mis Vehículos</h2>
+            <button class="btn-add" onclick="showAddVehicle()">+</button>
+        </div>
+        <div class="content">
+            <div class="vehicles-list" id="vehicles-list">
+                <div class="vehicle-card">
+                    <div class="vehicle-header">
+                        <h3>Toyota Camry</h3>
+                        <span class="vehicle-status tag-active">Tag Activo</span>
+                    </div>
+                    <div class="vehicle-info">
+                        <p><strong>Placa:</strong> ABC-123</p>
+                        <p><strong>NIV:</strong> 1HGBH41JXMN109186</p>
+                        <p><strong>RFID:</strong> TAG-001234</p>
+                    </div>
+                    <div class="vehicle-actions">
+                        <button class="btn-small" onclick="editVehicle(1)">Editar</button>
+                        <button class="btn-small btn-danger" onclick="deleteVehicle(1)">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla Agregar/Editar Vehículo -->
+    <div id="vehicle-form-screen" class="screen">
+        <div class="header">
+            <button class="btn-back" onclick="showVehicles()">←</button>
+            <h2 id="vehicle-form-title">Registrar Vehículo</h2>
+        </div>
+        <div class="content">
+            <form id="vehicle-form" onsubmit="saveVehicle(event)">
+                <div class="form-group">
+                    <label for="vehicle-make">Marca</label>
+                    <input type="text" id="vehicle-make" required>
+                </div>
+                <div class="form-group">
+                    <label for="vehicle-model">Modelo</label>
+                    <input type="text" id="vehicle-model" required>
+                </div>
+                <div class="form-group">
+                    <label for="vehicle-niv">NIV (Número de Identificación Vehicular)</label>
+                    <input type="text" id="vehicle-niv" required>
+                    <small>Con este número podemos verificar tu placa automáticamente</small>
+                </div>
+                <div class="form-group">
+                    <label for="vehicle-plate">Placa</label>
+                    <input type="text" id="vehicle-plate" placeholder="Se llenará automáticamente si hay conexión">
+                </div>
+                <div class="form-group">
+                    <label for="vehicle-address">Dirección asociada</label>
+                    <select id="vehicle-address" required>
+                        <option value="">Selecciona una dirección</option>
+                        <option value="1">Av. Ejemplo 123, Col. Centro</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Guardar Vehículo</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pantalla Centros de Atención -->
+    <div id="centers-screen" class="screen">
+        <div class="header">
+            <button class="btn-back" onclick="showMain()">←</button>
+            <h2>Centros de Atención</h2>
+        </div>
+        <div class="content">
+            <div class="centers-list">
+                <div class="center-card">
+                    <div class="center-header">
+                        <h3>Módulo Central</h3>
+                        <span class="center-status open">Abierto</span>
+                    </div>
+                    <div class="center-info">
+                        <p class="center-address">📍 Av. Ejemplo 456, Col. Centro</p>
+                        <p class="center-hours">🕐 Lunes a Viernes: 9:00 - 18:00</p>
+                        <p class="center-hours">🕐 Sábados: 9:00 - 14:00</p>
+                        <p class="center-phone">📞 Tel: (81) 1234-5678</p>
+                    </div>
+                    <button class="btn-primary" onclick="openMap(1)">Ver en Mapa</button>
+                </div>
+                <div class="center-card">
+                    <div class="center-header">
+                        <h3>Módulo Norte</h3>
+                        <span class="center-status open">Abierto</span>
+                    </div>
+                    <div class="center-info">
+                        <p class="center-address">📍 Av. Norte 789, Col. Norte</p>
+                        <p class="center-hours">🕐 Lunes a Viernes: 9:00 - 18:00</p>
+                        <p class="center-hours">🕐 Sábados: 9:00 - 14:00</p>
+                        <p class="center-phone">📞 Tel: (81) 2345-6789</p>
+                    </div>
+                    <button class="btn-primary" onclick="openMap(2)">Ver en Mapa</button>
+                </div>
+                <div class="center-card">
+                    <div class="center-header">
+                        <h3>Módulo Sur</h3>
+                        <span class="center-status closed">Cerrado</span>
+                    </div>
+                    <div class="center-info">
+                        <p class="center-address">📍 Av. Sur 321, Col. Sur</p>
+                        <p class="center-hours">🕐 Lunes a Viernes: 9:00 - 18:00</p>
+                        <p class="center-hours">🕐 Sábados: 9:00 - 14:00</p>
+                        <p class="center-phone">📞 Tel: (81) 3456-7890</p>
+                    </div>
+                    <button class="btn-primary" onclick="openMap(3)">Ver en Mapa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla Solicitar Tag -->
+    <div id="tag-request-screen" class="screen">
+        <div class="header">
+            <button class="btn-back" onclick="showMain()">←</button>
+            <h2>Solicitar Tag RFID</h2>
+        </div>
+        <div class="content">
+            <div class="tag-info-card">
+                <h3>Información del Tag</h3>
+                <p>El tag RFID te permitirá circular por las calles del municipio de San Pedro Garza García.</p>
+                <div class="tag-benefits">
+                    <p>✓ Acceso a vías del municipio</p>
+                    <p>✓ Identificación automática</p>
+                    <p>✓ Registro vehicular oficial</p>
+                </div>
+            </div>
+
+            <form id="tag-request-form" onsubmit="processTagRequest(event)">
+                <div class="form-group">
+                    <label for="tag-vehicle">Vehículo</label>
+                    <select id="tag-vehicle" required>
+                        <option value="">Selecciona un vehículo</option>
+                        <option value="1">Toyota Camry - ABC-123</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tag-delivery">Método de entrega</label>
+                    <select id="tag-delivery" required onchange="updateDeliveryCost()">
+                        <option value="">Selecciona método</option>
+                        <option value="pickup">Recoger en módulo (Gratis)</option>
+                        <option value="delivery">Envío a domicilio (DHL)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="delivery-address-group" style="display: none;">
+                    <label for="tag-address">Dirección de envío</label>
+                    <select id="tag-address">
+                        <option value="">Selecciona una dirección</option>
+                        <option value="1">Av. Ejemplo 123, Col. Centro</option>
+                    </select>
+                </div>
+
+                <div class="payment-summary">
+                    <div class="summary-row">
+                        <span>Registro de vehículo:</span>
+                        <span>$100.00 MXN</span>
+                    </div>
+                    <div class="summary-row" id="delivery-cost-row" style="display: none;">
+                        <span>Envío DHL:</span>
+                        <span id="delivery-cost">$0.00 MXN</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total-cost">$100.00 MXN</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary btn-large">Continuar al Pago</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pantalla de Pago -->
+    <div id="payment-screen" class="screen">
+        <div class="header">
+            <button class="btn-back" onclick="showTagRequest()">←</button>
+            <h2>Pago</h2>
+        </div>
+        <div class="content">
+            <div class="payment-summary-card">
+                <h3>Resumen de compra</h3>
+                <div class="summary-details">
+                    <div class="summary-row">
+                        <span>Registro de vehículo:</span>
+                        <span>$100.00 MXN</span>
+                    </div>
+                    <div class="summary-row" id="payment-delivery-row" style="display: none;">
+                        <span>Envío DHL:</span>
+                        <span id="payment-delivery-cost">$0.00 MXN</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="payment-total">$100.00 MXN</span>
+                    </div>
+                </div>
+            </div>
+
+            <form id="payment-form" onsubmit="processPayment(event)">
+                <div class="form-group">
+                    <label for="card-number">Número de tarjeta</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="card-expiry">Vencimiento</label>
+                        <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-cvv">CVV</label>
+                        <input type="text" id="card-cvv" placeholder="123" maxlength="3" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="card-name">Nombre en la tarjeta</label>
+                    <input type="text" id="card-name" placeholder="JUAN PEREZ" required>
+                </div>
+                <button type="submit" class="btn-primary btn-large">Pagar $100.00 MXN</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pantalla de Confirmación -->
+    <div id="confirmation-screen" class="screen">
+        <div class="content confirmation-content">
+            <div class="confirmation-icon">✓</div>
+            <h2>¡Pago Exitoso!</h2>
+            <p>Tu registro ha sido procesado correctamente.</p>
+            <div class="confirmation-details">
+                <p><strong>Folio:</strong> <span id="confirmation-folio">REG-2025-001234</span></p>
+                <p><strong>Vehículo:</strong> <span id="confirmation-vehicle">Toyota Camry - ABC-123</span></p>
+                <p><strong>Método de entrega:</strong> <span id="confirmation-delivery">Recoger en módulo</span></p>
+            </div>
+            <div class="confirmation-message">
+                <p id="confirmation-message-text">Puedes recoger tu tag en cualquiera de nuestros centros de atención. Presenta este folio al personal.</p>
+            </div>
+            <button class="btn-primary" onclick="showMain()">Volver al Inicio</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

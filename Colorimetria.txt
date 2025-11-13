@@ -1,0 +1,7 @@
+Paleta resumida
+Color	HEX	Uso típico
+Azul oscuro	#002E5F	Marca / cabecera
+Azul medio (acento)	#005A9C	Botones, enlaces, elementos destacados
+Blanco puro	#FFFFFF	Fondo principal y espacios de contenido
+Gris claro	#F4F5F6	Fondos alternativos, separadores
+Gris/negro texto	#1D1D1D / #333333	Texto principal

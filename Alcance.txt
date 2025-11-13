@@ -1,0 +1,287 @@
+Saltillo, Coahuila; a viernes, 11 noviembre de 2025
+Blvd. Venustiano Carranza 4120 Int. 13-B,
+Villa Olímpica, Saltillo, Coahuila, México, C.P. 25230
+Propuesta Técnica de Software e Ingeniería
+Cliente: San Pedro.
+Proyecto: San Pedro - Control Vehicular
+Requerimiento: San Pedro-004
+1.Descripción General de la Propuesta
+Esta propuesta tiene como objetivo presentar el stack tecnológico, infraestructura y tiempo de
+desarrollo para la implantación de control vial en el municipio de San Pedro Garza García
+2. Tecnologías sugeridas y justificación
+Componente Tecnología propuesta Justificación
+Ecosistema robusto para la creación de backoffice
+BackEnd Python (Django +
+RestFrameWork)
+administrativo y API´s tipo REST para la comunicación
+de diversos clientes (Navegador web, apps móviles,
+etc.)
+Portal Web Vanilla Stack +
+Django Template
+Óptimo y de rápida implementación, con integración nativa
+al backend y enfoque en la seguridad de datos.
+Implementación nativa de aplicaciones móviles para
+Aplicaciones
+móviles nativas
+Swift/Kotlin
+Android y IOS con el fin de aprovechar todas las
+funcionabilidades de los dispositivos.
+Permite uso de tecnologías modernas con bajo costo.
+Hosting VPS Linux
+Compatible con Python, y herramientas de seguridad
+enfocadas en el tráfico web.
+Base de datos
+adicional PostgreSQL Recomendado para búsquedas por indexación y
+consulta directa a objetos concretos.
+3. Detalle de módulos propuestos.
+3.1 Estructura de Usuarios del sistema
+●
+●
+Funcionalidad:
+o Crear, actualizar, eliminar usuarios que podrán utilizar el sistema como parte del
+equipo de trabajo de San Pedro.
+o Mostrar Usuarios registrados.
+o Recuperación de contraseña por medio de autorización del administrador
+Tiempo estimado: 1 semanas
+Saltillo, Coahuila; a viernes, 11 noviembre de 2025
+Blvd. Venustiano Carranza 4120 Int. 13-B,
+Villa Olímpica, Saltillo, Coahuila, México, C.P. 25230
+3.2 Estructura de Ciudadano
+●
+●
+Funcionalidad:
+o Crear, actualizar, eliminar ciudadanos
+o Mostrar ciudadanos registrados.
+o Crear actualizar y eliminar Vehículos
+▪
+Marca
+▪
+Modelo
+▪
+Tarjeta de circulación
+▪
+Placa
+▪
+Número RFID
+o Crear actualizar y eliminar Direcciones
+▪
+Calle
+▪
+Número exterior
+▪
+Número Interior
+▪
+Número de Predial
+o Cada ciudadano contara con los campos de
+▪
+Nombres
+▪
+Apellido Paterno
+▪
+Apellido Materno
+▪
+CURP
+▪
+RFC (No obligatorio)
+Tiempo estimado: 2-3 semanas
+3.3 FrontEnd funcionario
+●
+●
+Funcionalidad:
+o Administración de ciudadanos
+o Administración de vehículos
+o Administración de direcciones
+Tiempo estimado: 2 semanas
+3.4 FrontEnd Administrador
+●
+Funcionalidad:
+o Administración de usuarios
+o Inventario de RFID
+o Reportes de registros de ciudadano, vehículos
+o Administración de ciudadano
+o Administración de direcciones
+o Administración de vehículos
+o
+Saltillo, Coahuila; a viernes, 11 noviembre de 2025
+Blvd. Venustiano Carranza 4120 Int. 13-B,
+Villa Olímpica, Saltillo, Coahuila, México, C.P. 25230
+●
+Tiempo estimado: 2 semanas
+3.5 FrontEnd Web Ciudadano
+●
+●
+Funcionalidad:
+o Registro
+o Modulo mi cuenta
+o Solicitud de nuevas direcciones
+o Solicitud de nuevos vehículos
+Tiempo estimado: 1-2 semanas
+3.6 Aplicaciones Móviles Nativas
+●
+●
+Funcionalidad:
+o Registro
+o Modulo mi cuenta
+o Solicitud de nuevas direcciones
+o Solicitud de nuevos vehículos
+Tiempo estimado: 3-4 semanas
+** NOTAS: Los tiempos expresados no contemplan integracion de interfaces de programacion
+de terceros la cual puede afectar los tiempos de entrega
+4. Infraestructura recomendada (actual y óptima)
+Se sugiere una infraestructura monolítica modular con posibilidad de migrar a microservicios
+en caso de necesidad de escalabilidad horizontal dividida por tipo de carga, para mantener
+eficiencia, evitar cuellos de botella y optimizar costos.
+VPS
+Componente
+Justificación
+recomendado
+Sistema
+principal
+VPS
+Mantiene la lógica del sistema central, base de datos
+relacional, dashboard y paneles.
+- VPS 1 – Sistema principal
+●
+●
+●
+●
+Linux Ubuntu Server
+CPU: 2–4 vCPU
+RAM: 8–16 GB
+Disco: SSD 250 GB+
+Saltillo, Coahuila; a viernes, 11 noviembre de 2025
+Blvd. Venustiano Carranza 4120 Int. 13-B,
+Villa Olímpica, Saltillo, Coahuila, México, C.P. 25230
+5. Tabla ejecutiva resumen.
+Módulo Tiempo estimado
+Estructura de Usuarios del sistema 1 semana
+Estructura de Ciudadano 2–3 semanas
+FrontEnd funcionario 2 semanas
+FrontEnd Administrador 2 semanas
+FrontEnd Web Ciudadano 1-2 semanas
+Aplicaciones Móviles Nativas 3-4 semanas
+Tiempo estimado total: 11 – 14 semanas
+Consideraciones Técnicas
+- Es necesario validar el tipo de comunicación para consulta de placas y predial
+- Es necesario definir la comunicación con los sensores para tener una infraestructura confiable
+para el protocolo que se utilizará
+- No se contempla el uso de validaciones para el registro del ciudadano
+- Definir la capa de autenticación y autorización (roles, permisos, y métodos de verificación de
+identidad, como JWT o sesiones seguras).
+
+
+
+El cliente solicita que todo esto sea en una app con una pasarela de pago, un modulo de registro de carros, visualizacion, edicion, y registro
+
+un modulo para poder visualizar los centros de atencion
+
+un modulo para solicitar un tag y que este sea enviado al domicilio del ciudadano
+
+
+Esta es la transcripcion de la reunion con el cliente cuando se le mostro el alcance descrito en este documento:
+
+(3:05) Hola a todos, buenos días. ¿Qué tal, Fede? ¿Cómo estás? ¿Ya listos? Hola, buenos días. (3:17) ¿Listos? Pues adelante señores, estoy todo oídos.
+(3:22) ¿Listo? Ahí puedes ver mi pantalla. (3:26) Bueno, ya estuvimos analizando el proyecto para ver qué es todo lo que incluiría. (3:37) Esta es como la propuesta técnica y de software.
+(3:43) Tecnologías son las que usamos de base como para la mayoría de los proyectos, (3:52) que es un backend en Python, con Django como framework, Django templates, Vanilla. (3:59) La parte de las aplicaciones móviles que hablábamos para los ciudadanos serían aplicaciones nativas en Swift para iOS y en Kotlin para Android, (4:09) que es el lenguaje nativo de cada una de las dos plataformas. (4:13) Un hosting en Linux y base de datos Postgres.
+(4:18) Y aquí viene la justificación de por qué implementar esas tecnologías, porque es la mejor propuesta. (4:26) Ya dentro de los módulos, para esta primera fase, implementamos dentro del módulo de usuarios del sistema, (4:34) que serían los usuarios que tendrían como los funcionarios de gobierno, (4:39) para estar dando, mostrar los usuarios, darle al usuario, recuperación de contraseña, etc. (4:46) Toda la parte administrativa.
+(4:49) Y luego aquí viene, por ejemplo, la estructura de lo que va a traer la parte del ciudadano. (4:54) Es bueno que los funcionarios puedan crear, actualizar y eliminar ciudadanos. (4:59) Ver los ciudadanos registrados.
+(5:02) Los vehículos puedan crear, actualizar y eliminar vehículos con los campos de marca. (5:07) ¿Qué marca modelo? (5:09) Una foto de la tarjeta de circulación, placa, y su número de identificación de referi, que sería el tag que le proporcionaríamos. (5:17) Ahí es donde se vincularía.
+(5:19) Te voy a interrumpir. (5:20) Foto de la tarjeta o el NIV. (5:25) Con que carguen el NIV del vehículo, con eso tenemos.
+(5:28) Y ahí, considerando que ese NIV, en su momento, podemos tener la posibilidad de irlo a checar, (5:33) si nos dan la apertura, si nos dan el switch, el socket, conectarnos con la base de datos del registro vehicular, (5:41) para verificar que sea real. (5:44) Perfecto. (5:45) Bueno, entonces le cambiamos aquí tarjeta de circulación por el NIV del vehículo, que lo puedan dar de alta ahí.
+(5:51) Perfecto. (5:52) Y bueno, pues en ese caso ya nos ocuparía, si tenemos el NIV y podemos consultar la base de datos, (6:00) pues ahí podemos extraer la placa. (6:02) Dejamos como aquí el registro de placa, por si no tenemos esa conexión que lo den de alta.
+(6:06) Ahí manual. (6:07) Es correcto. (6:07) Lo pueden ir actualizando.
+(6:09) Ok. (6:09) Perfecto. (6:10) Bueno, el número de identificación del RFID del TAC, las direcciones del ciudadano, (6:16) ya ves que tiene que estar vinculado a una propiedad en San Pedro, ¿no? (6:19) Sí.
+(6:20) Que venga calle, número exterior, número interior y el número de predial de esa propiedad, (6:25) para poder consultar. (6:26) Exacto. (6:27) Quizás también lo que te pediría es que solo vaya y consulte el número de predial y con eso se traiga todo lo demás.
+(6:34) Ok. (6:35) Perfecto. (6:35) Sí, sí, sí.
+(6:36) Para no dar la oportunidad de, oye, no tengo el nombre de predial, pues no puedo registrarlo, pues vale. (6:40) O sea, dame el predial y ya de ahí yo extraigo tus datos. (6:43) Claro.
+(6:44) Ok. (6:45) Vale. (6:46) Igual se tendría que hacer yo una interfase para ir a consultar las bases de predial y jalarse la información.
+(6:52) Sí, sí. (6:52) Está ya contemplada como esa conexión que pues tendríamos que hacer con municipio. (6:58) Es correcto.
+(6:59) Ok. (7:00) Igual como quiera, bueno, dentro de la estructura yo te dejaría estos datos. (7:04) Sí.
+(7:05) Para una vez que lo consultamos nosotros como quiera guardarlos, aunque al ciudadano le pidamos nada más el predial, (7:10) los guardamos nosotros y así evitamos consultas posteriores. (7:14) Bien. (7:14) Ya cuando lo queramos revisar ya tenemos la data nosotros sin tener que estar consultando a cada rato el web service que nos habilite el municipio.
+(7:23) Es correcto. (7:24) Vale. (7:24) Bien.
+(7:25) Y de los ciudadanos, pues su nombre completo, apellido paterno, apellido materno, el CUR, el RPC lo dejamos como opcional. (7:34) Sí. (7:35) En caso de que tengamos algún tema de facturación y demás.
+(7:38) Bien. (7:38) Serían como los datos que le pediríamos, ¿no? (7:40) Además de, bueno, para su usuario contraseña, digo, para su inicio de sesión un usuario contraseña con correo electrónico. (7:48) Bien.
+(7:48) Sí. (7:49) ¿Sabes qué le voy a agregar aquí? (7:51) Que no vi el número de teléfono. (7:53) También que lo podamos agregar.
+(7:55) Sí. (7:57) Este, bueno, la parte del front end, que es lo visual del funcionario, pues que traiga una parte de administración de ciudadanos, (8:04) administración de vehículos y de direcciones. (8:07) Esta administración, pues, incluye el visualizar, crear, editar y demás.
+(8:12) Sí. (8:15) El administrador va a traer un administrador de usuarios, o sea, alguien de sistemas que se encarga de otorgar los accesos a todos los funcionarios (8:23) y manejar el inventario de los TAC, de los RFID. (8:29) Ese administrador puede ver reportes de los registros ciudadanos, vehículos y va a administrar ciudadanos, direcciones y vehículos.
+(8:37) Este administrador sería como un nivel arriba de los funcionarios. (8:39) Y ella sería el que tendría toda la parte de reporteo. (8:44) ¿Vale? (8:45) Sí.
+(8:45) El web del ciudadano, este, bueno, que se pueda registrar el ciudadano. (8:50) Tengo un módulo de mi cuenta, donde él ahí ya puede cargar, si tiene distintas propiedades, distintas propiedades. (8:56) Puede dar de alta sus vehículos.
+(8:59) Sí. (8:59) Esto sería en web. (9:01) Y en la aplicación móvil, pues, tendría las mismas funcionalidades que en web, solamente que en aplicación.
+(9:06) Igual, su registro, inicio de sesión, su módulo de mi cuenta. (9:12) Y ahí puede administrar, igual, sus direcciones, sus propiedades y su alta de vehículo. (9:18) Bien.
+(9:19) Sí. (9:20) Y, bueno, aquí en las notas pusimos lo que es el tiempo de integración por municipio. (9:27) En nuestra experiencia, a veces eso es lo que retrasa los proyectos.
+(9:30) Yo ya tengo todo listo para conectarme, pero de aquí a que nos autorizan, nos habilitan el webservice, algo con municipio, (9:39) nos puede retrasar un poquito los tiempos de operación, sobre todo para la consulta de predial, por ejemplo. (9:44) Predial y placas. (9:45) Esas interacciones con ellos a veces es lo que nos retrasa.
+(9:48) Sí. (9:51) Bien. (9:54) Sí.
+(9:54) Bueno, infraestructura, pues, es un servidor VPS. (9:59) Esto lo que nos permite es también que en el momento de que vaya creciendo el proyecto, pues lo podemos escalar en cuestión de minutos sin problemas. (10:07) Para no iniciar de entrada con un servidor muy grande, entonces iniciamos con uno que nos puede dar la capacidad de registros (10:15) y en el momento ya de operación lo incrementamos sin ningún problema.
+(10:19) ¿Vale? (10:20) Bueno, todo esto es infraestructura, el servidor Linux, un servidor. (10:25) Ahorita para la cotización estamos considerando uno de CPU, digo, de dos CPUs, 8 de RAM y 200 GB de almacenamiento, (10:34) ya con la posibilidad de escalarse en cualquier momento. (10:37) ¿Sí? (10:39) Tiempos, tiempos de desarrollo, tenemos entre 11 y 14 semanas de desarrollo.
+(10:44) Demasiado. (10:46) Sí. (10:47) Todo esto, podemos bajar ese tiempo de desarrollo.
+(10:50) Estos tiempos es como el estándar así que manejamos, sobre todo también para sacar costos. (10:58) Digo, oye, ¿cuánto nos va a costar desarrollar todo esto? (11:00) En semanas, hombre, sí, pero puedes hacerlo de manera simultánea en algunos módulos, ¿no? (11:05) Sí. (11:06) Algunos módulos, por ejemplo, todo lo que es web, pues empieza a trabajar simultáneamente.
+(11:10) Entonces ya en cuestión de tiempo de entrega, pues, no sé, a lo mejor una semana en realidad equivalió a 3 semanas, (11:17) porque se hicieron 3 módulos paralelos. (11:19) Y ahí el tiempo de desarrollo, eso lo bajamos. (11:23) Este, bueno, consideraciones técnicas, pues es la comunicación para consultar las placas y prediar.
+(11:29) Ajá. (11:29) Este, y la partida de la infraestructura. (11:33) Tengo aquí la cotización del módulo de antenas que me mandó mi proveedor para otro proyecto.
+(11:39) Entonces, ahorita lo que voy a hacer es multiplicar ese costo de, es el módulo y el lector. (11:46) Este, te acuerdas que habíamos considerado 5 puntos de lectura con 4 carriles en cada punto. (11:52) Entonces serían 20 antenas.
+(11:55) Ajá. (11:55) ¿Parece bien? (11:56) Sí, pero, ¿sabes qué? Ahorita vamos exclusivamente a esta parte. (12:00) Te voy a decir porque muy probablemente vayamos a empezar exclusivamente con esto todo y las antenas todavía no.
+(12:06) ¿Este aquí la cotización de cuánto costaría? (12:09) Sí, las antenas. (12:10) Sí, esta ya la traía Dianita. (12:13) Dianita, ¿te la regreso, Quique? (12:17) No, todavía no tengo el visto web.
+(12:20) Ok. (12:22) Quique nos anda evaluando ahí el costo, pero el promedio está en toda la parte web. (12:29) Todos los módulos web andan como en $400, casi casi el costo.
+(12:34) Y cada una de las aplicaciones en $200 cada una. (12:37) Entonces cada 4, 2, 5, 6, como $800 más o menos. (12:41) Ok.
+(12:42) Entonces viendo si se puede bajar o algo. (12:44) Pero además eso es lo que nos salió agarrando las horas de desarrollo. (12:48) Yo quiero subirle el costo, ¿no? (12:50) Te voy a explicar qué le voy a proponer al municipio.
+(12:54) Y vas a tener que agarrar un módulo más si me lo compras así. (12:57) Ok. (12:58) A ver, $800 más o menos de lo que tú traes.
+(13:00) Más lo que traigo yo está dentro de lo que puedan asignar de manera directa. (13:03) Pero el negocio va a ser muy chiquito. (13:05) Ok.
+(13:06) Entonces yo le quiero ofrecer, decirle, a ver. (13:09) Al final de cuentas, el contar con ese tag va a ser un privilegio. (13:13) Que te va a permitir no pagar en los parquímetros.
+(13:17) Y circular por una calle que es un terminal completo, ¿no? (13:21) Entonces le quiero proponer que el costo lo pague el ciudadano. (13:26) Y quiero que te pongan todos los que están en esta reunión. (13:32) Se pongan más o menos en la mentalidad de cuando vas a sacar la visa.
+(13:37) ¿Sí? (13:38) Donde tú puedes bajar la aplicación o meterte a la página web. (13:42) Pero para poderte registrar, tengas que hacer un pago. (13:48) El registro y ese pago va a incluir tu registro y tu tag.
+(13:54) Vamos a suponer que cobramos bien barato. (13:59) Que cobramos 40 pesos por cada carro que registres. (14:02) Son 140 por 140,000.
+(14:06) Estamos hablando que este proyectito nos dejaría 5,600,000. (14:13) Voy a proponerlo así. (14:16) Con la intención de que me digan, dale.
+(14:17) Porque si no le cuesta un centavo al municipio. (14:20) Pero en caso de que me digan no, lo que voy a hacer es, (14:23) está bien, no hay bronca. (14:25) Te lo vendo y tú lo haces.
+(14:28) Pero voy a regresar, vamos a suponer que me digan que sí. (14:31) De hecho, le voy a proponer que sean 50 pesos para ir a negociar. (14:35) 50 pesos por 140,000 vehículos.
+(14:37) Estamos hablando de 7 millones de pesos. (14:39) Ya se va a ver algo interesante. (14:41) Pero, ok, vamos a suponer otra vez que tú eres la persona (14:44) y ya está todo funcionando y tú eres un usuario.
+(14:46) Entonces, te bajas la aplicación y te registras en la aplicación móvil. (14:51) O te metes a la página web y ese es todo el proceso de registro, etc. (14:55) Y tiene que terminar con un módulo que no tienes aquí, (14:58) que tienes que agregarlo para poder meter tu tarjeta de crédito o débito (15:02) e ir, ¿cómo se llama?, y hacer el pago.
+(15:06) Con ese pago te va a generar un número de folio de registro. (15:10) Y luego, la otra es que haya dos opciones. (15:17) Que tú vayas a recoger alguno de los módulos, ¿cómo se llama? (15:22) Tu tag.
+(15:24) Para todo caso, habrá que tener, no sé si lo tienes considerado aquí, (15:29) un módulo del que va a entregar el tag, (15:31) que simplemente lo que haces es que escaneas el número de registro. (15:37) Y luego el tag y ya se lo entregas. (15:39) Pero quiero agregarle algo más.
+(15:42) Para todos los usuarios como yo. (15:44) Que digan, no, ¿sabes qué? Igual que en la visa. (15:47) Te lo mandamos a tu casa, a la dirección que tienes ahí registrada.
+(15:51) Y al pagarte, lo único que tienes que hacer es además pagar el envío de DHL. (15:55) Que te va a costar otros, no sé. (15:57) Estoy ahorita con el Príncipe Mariana.
+(16:00) Que cotizara en grandes volúmenes. (16:03) Oye, si voy a hacerte 140.000 envíos de una etiquetita, (16:08) ¿cuánto nos costaría? (16:11) Entonces, quiero proponer eso. (16:13) Porque es más negocio para todos.
+(16:16) El municipio no tendría, yo le puedo decir, ¿sabes qué? (16:19) A lo mejor cobramos 100 pesos por vehículo. (16:22) ¿Para qué? Para que los otros, a mí me das, no sé, (16:25) me das 40 y los otros 60, (16:27) sirvan para sacar dinero para poner los puntos de detección. (16:31) Pues vamos a poner que fuera así.
+(16:33) Que nosotros nos quedamos con 40 pesos de cada. (16:34) Mira, bajito, que nos quedamos con 30 pesos de cada registro. (16:39) 30 por 140.000. (16:42) Estamos hablando que son 4.200.000. (16:45) Que nos repartimos entre ustedes y nosotros.
+(16:50) Pero, si cobramos 100 pesos, (16:53) quiere decir que quedan 70 pesos por 140.000. (16:57) Quedan 10 millones de pesos para poner todos los puntos de control. (17:01) Ahora, habrá que ver, (17:04) si ya tienen más o menos números, (17:06) qué le harías considerar de infraestructura y cuánto cuesta. (17:09) Hasta dónde va a salir.
+(17:10) Sí, mira, déjame, tengo aquí la cotización. (17:14) Sí, dame, sí. (17:17) Mira, déjame, te muestro aquí la cotización.
+(17:22) Sí. (18:13) Dianita, ¿por qué grupo nos mandó la cotización, Sergio? (18:18) Por el de ventas, ¿verdad? (18:22) Sí, creo que sí, déjame ver. (18:34) Pero tienes ahí los puros fierros, ¿verdad? (18:42) No estás considerando todo lo que se requiere de desarrollo para poder... (18:47) Sí, no, hasta ahorita tenía la cotización de que es las antenas.
+(18:52) Faltaría, ahora sí, cotizar todo lo que ya sería obra civil y estructuras. (18:58) De dónde montarlas. (19:00) Bueno, mira, te voy a platicar, más o menos, qué es lo que puede suceder.
+(19:03) El viernes a las 12 tengo cita. (19:06) Para ver la instrumentación de esto. (19:08) Entonces, me urgía poder ver este tema contigo.
+(19:10) Ya vi que andamos más o menos en costos. (19:12) En ambas opciones lo voy a manejar así. (19:14) Voy a manejar lo de las etiquetas.
+(19:17) Las etiquetas van a salir más o menos. (19:18) Le vamos a poner el tag de RFID, un holograma, etcétera. (19:24) Y va a ser la telecomunidad muy visible, etcétera.
+(19:26) Más o menos van a costar 8 pesos cada etiqueta. (19:30) Asegurándole a ellos. (19:32) Entonces, 8 pesos por 140,000.
+(19:39) Es 1,120,000. (19:41) Y le voy a pedir para ustedes 900,000. (19:47) Con la intención de que si me piden que le baje, pues llegue a los 800,000 que me estás pidiendo.
+(19:53) Específicamente para... (19:54) Pero sí necesito... (19:58) Vamos a poner 900,000, ¿sabes qué? (20:00) Para que le agradezca el módulo de cobro, el de pago. (20:04) ¿Sí? (20:08) Y pregunta, ¿con ese mismo te alcanza para poner un módulo más de pago para DHL? (20:12) Ah, pues es el mismo, ¿no? (20:14) Sí, sobre el mismo módulo, nomás sería el concepto extra de paquetería. (20:21) Exacto.
+(20:21) No hay problema por eso. (20:23) Ok. (20:24) Entonces, yo voy a tratar de vender otro porque es más negocio que todos.
+(20:29) ¿Sí? (20:29) ¿Cuál es la diferencia? (20:31) Y aquí es donde necesito ver si tienen ustedes la capacidad de hacerlo. (20:36) Es que en el caso de la venta, le diríamos, dame el 50% anticipo. (20:43) En tu caso, pues se los dan 400,000 pesos.
+(20:45) Y dame el otro 50% cuando ya te haga entrega del software funcionando. (20:52) ¿Sí? (20:52) Y ahí acabamos. (20:55) En el caso de... ¿Cómo se llama? (20:57) En el caso de que no fuera así, sino que fuera el tema de que, oye, ¿sabes qué? (21:03) Cobramos a cada usuario.
+(21:08) Ahí nosotros tendríamos que poner la lana en nuestra bolsa. (21:12) E ir recibiendo el dinero, y es dinero nuestro. (21:15) Sí, ya conforme se vaya cobrando.
+(21:18) Exactamente. (21:19) Entonces, yo creo que sí vale la pena ustedes que lo platiquen y me digan, ¿sabes qué? (21:22) Si aguantamos hacer el, ¿cómo se llama? (21:26) La inversión y ir recibiendo. (21:28) La idea es que podamos entregar los 140,000.
+(21:33) Obviamente va a haber colas, porque todo el mundo va a querer utilizarla. (21:37) Sí, una vez que se quese el ansio, todos van a quererlo. (21:40) Estamos calculando que el 70% de esa gente, de los carros, lo van a sacar el primer mes.
+(21:48) ¿Sí? (21:50) Entonces, pues, a todo dar. (21:52) Y va a dar el 30% porque mi segundo carro lo saco después, una cosa así. (21:57) Porque te digo, es un hecho que aquí en San Pedro hay gente que tiene un solo vehículo.
+(22:02) Los vehículos que mueves todos los días los vas a querer tener ya. (22:05) Entonces, vamos a tener más que un problema de decir, ¿qué tanto tarde en recuperar mi lana? (22:10) Vamos a tener también un problema de logística para poder tener esa capacidad de poder entregar. (22:16) 140,000 en 30 días, estamos hablando de 35,000 por semana.
+(22:22) En una semana de 5 días, estamos hablando de 7,000 diarios. (22:30) Es correcto. (22:31) Entonces, ahora, la broma es que esa logística no es clave.
+(22:36) ¿Sí? (22:38) No, no te creas. (22:42) Un tema pudiera ser, voy a tratar de pensar en voz alta. (22:47) Nosotros le damos todos modos.
+(22:49) Por el tema de registro, pues es el municipio, la base de manejo, la base de datos, es todo. (22:52) A nosotros, el cargo, nomás lo que vaya pagando la gente, caen nuestras cuentas, no caen cuentas de ellos. (22:57) ¿Sí? (22:58) O cae la parte proporcional, nos caen nosotros, no cuentas de ellos.
+(23:05) Y nosotros arreglamos que DHL vaya y recoja y entregue. (23:10) Pero que sean funcionarios municipales los que hagan el casar la comunidad con el registro que tenga el PIN. (23:19) Que tenga el usuario.
+(23:21) Pero bueno, entonces, si igual te parece la logística. (23:27) Hace poquito me topé una empresa que hace como 3PL local ahí en Monterrey, área metropolitana. (23:34) Déjame busco el dato y igual te lo paso.
+(23:36) Lo que ellos almacenan, tú les mandas las órdenes y ellos se encargan de distribuir. (23:47) Yo quiero el viernes ya que tengan el panorama completo y poder decir, (23:50) ¿sabes qué? Si cobramos 50 pesos por registro o 100 pesos por registro, se maneja así, (23:58) yo de ahí quiero 30 pesos, ¿sí? (24:00) Voy a tratar de irme a 40. (24:01) Yo quiero 40 pesos y ustedes lo demás, mételo a un fondo para que puedas ir poniendo la infraestructura que vas a requerir de control.
+(24:10) Pero si me gustaría también, como quiero decirle, bueno, la infraestructura de control te va a costar los arcos tanto. (24:19) Entonces, si me urge que me puedas decir eso. (24:23) Pensando en el tema de que vaya alguien de aquí.
+(24:28) ¿Sabes qué? Puedes pedirle, María, me consiga, por favor, de darse una vuelta por la calle (24:32) y ver dónde pudiéramos poner los arcos detectores, los apartes detectores en infraestructura que ya esté puesta. (24:40) Sí, yo creo que, bueno. (24:41) No tener que, ¿cómo se llama? (24:44) Puede ser abajo de un bajopuente, puede ser, y hay algunos arcos ahí que están poniendo para cámaras.
+(24:49) Los de cámaras es que hay conectividad. (24:52) Sí, pero yo creo que sería lo ideal, algún punto que ya tengan de conectividad, de ahí mismo gancharnos. (24:58) Ayer pasé por ahí, pero fíjate que no presté atención, se me durmió.
+(25:03) No, pues entonces así lo hacemos. (25:06) ¿Qué me urge que me puedas dar antes del cierre de mañana? (25:11) Uno, un screenshot de un dibujito nada más de cómo se abriría la aplicación de las de cuenta. (25:19) Oscar ya está trabajando así las interfaces para que las puedas presentar como PDF.
+(25:25) ¿Te interesa, estamos ahorita las interfaces de toda la parte web, como el administrativo que va a tener municipio? (25:31) ¿O nos enfocamos más en la aplicación del ciudadano? (25:34) Vete a la del ciudadano, que es la que les va a interesar. (25:36) Ok, va. (25:38) Bueno, entonces, ¿qué me urge? (25:41) Primero, lo más importante, la definición.
+(25:44) Si tendrían ustedes la capacidad de decir, sí, sí, aguanto, empezamos a desarrollar todo y empezamos a cobrar. (25:50) Ah, ¿por qué es la otra? (25:51) La idea es que vamos a empezar a dar esto en enero. (25:56) Sí, para arrancar, ya expreso.
+(25:59) Es correcto. (26:00) Entonces, lo más importante es que me digas, ¿sabes qué? Ya checamos, sí, le entramos y sacrificamos. (26:07) Ganar ya, poquito, o ganar mucho, pero después.
+(26:15) Sí, ahorita lo revuelto con Kike y un ratito más te damos respuesta. (26:18) Después de entrar yo creo que sí. (26:21) Entonces, ese es uno.
+(26:22) Y luego dos, que me mandes las screenshots de los aplicativos del ciudadano, nomás para ponerlos en la presentación. (26:29) Es que me puedes dar muy redondo el costo de los arcos. (26:33) ¿Por qué no quiero? Para decirle, mira, este de los 100 pesos que va a pagar cada ciudadano, yo me quedo con 40 centavos, tú te quedas con 60, y con esos 60 vamos a pagar los apartes para ponerlos.
+(26:46) ¿Ya? (26:47) Sí, mira. (26:49) Sí, ahorita te saco el precio redondo, ahorita aquí en cuenta ya, cada antena me cuesta $2,297. (26:59) Por cuatro por antena, pues 19, son como 180 mil de antenas por cada arco, más o menos.
+(27:11) 180 mil pesos de antenas por cada arco. (27:13) Sí, de las puras antenas. Habría que haber ya cableado, puntos de conexión a internet y demás.
+(27:20) Pero la pura antena por arco, así puesto, son 174 mil 500, tomando el dólar a 19. (27:29) Sí, de costo, porque nos surtan las cuatro antenas para cada arco. (27:34) ¿Y son cuatro o son seis? (27:37) Yo considero cuatro.
+(27:39) Es que sabes qué, se me hace que hay lugares donde hay tres carriles. (27:44) Sí. (27:47) Pues vamos a considerarlo en cuatro, ¿sí? Y que el seis es extraordinario, es que tiene razón, un carril lo están arreglando.
+(27:53) Ok, entonces vamos a poner que sean así, estamos hablando de 180 mil de costo. (28:00) Al menos hay que venderlas al doble, 360. (28:03) Sí, y déjame... (28:08) Sí, no, pues al menos al doble para tener un colchoncito ahí de cualquier cosa que pudiéramos traer de otra estructura que poner.
+(28:15) Vamos a poner que entre trabajo y software y todo, nos cuesten 400 mil pesos cada arco. (28:26) Vamos a venderlos entre 800 y un millón. (28:30) Ok.
+(28:32) ¿Para qué? (28:34) Para que si nos dan los cinco, son cinco millones de pesos. (28:37) Más o menos, a reserva de verlo ya con detalle, ingeniería y demás, te voy a cobrar en un millón de pesos cada arco, que son cinco millones de pesos. (28:44) Pero tú vas a recopilar 9.800.000 de los 70 que te quedan.
+(28:48) Esos sí se los vamos a pedir nosotros. (28:50) Ahí sí es, me das el anticipo, compro las mugres, las pongo, las instalo, me las recibes y me pagas el resto. (28:57) Y serían por aquí todos los cinco millones.
+(28:59) Ok. (29:01) Entonces me voy a ir así, con ese número aproximado, para no esperarme a que tengas tú tu cotización. (29:06) Al final de cuentas, ahorita para esta presentación es nada más convencerlos de que vale la pena que le cobramos al ciudadano 100 pesos.
+(29:13) Ok, sí, para venderle la idea. (29:15) ¿Sale? Bueno. (29:16) Ya está, entonces nada más queda pendiente que me confirmes que efectivamente se la vienden así como les digo.
+(29:21) Ajá.
