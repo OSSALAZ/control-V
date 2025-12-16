@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Control Vial San Pedro - Sistema inteligente de gestión vehicular para un municipio más ordenado y eficiente">
+    <title>Control Vial - San Pedro Garza García</title>
+    <link rel="stylesheet" href="landing.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="Assets/logo.png" alt="San Pedro Logo" class="nav-logo">
+                <span class="nav-title">Control Vial</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#beneficios" class="nav-link">Beneficios</a>
+                <a href="#como-funciona" class="nav-link">Cómo Funciona</a>
+                <a href="#centros" class="nav-link">Centros</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="index.html" class="nav-cta">Acceder a la App</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="hero-particles" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge fade-in-up">
+                <span class="badge-icon">🚗</span>
+                <span>Sistema Inteligente de Gestión Vehicular</span>
+            </div>
+            <h1 class="hero-title fade-in-up delay-1">
+                Control Vial<br>
+                <span class="gradient-text">San Pedro Garza García</span>
+            </h1>
+            <p class="hero-subtitle fade-in-up delay-2">
+                Un municipio más ordenado, seguro y eficiente. Registra tu vehículo y obtén tu tag RFID para circular libremente por las vías autorizadas.
+            </p>
+            <div class="hero-cta fade-in-up delay-3">
+                <a href="index.html" class="btn btn-primary btn-large">
+                    <span>Registrar mi Vehículo</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#como-funciona" class="btn btn-secondary btn-large">
+                    <span>Conocer Más</span>
+                </a>
+            </div>
+            <div class="hero-stats fade-in-up delay-4">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="140000">0</div>
+                    <div class="stat-label">Vehículos Objetivo</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">Puntos de Control</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">Centros de Atención</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <span>Desliza para explorar</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Sobre la Iniciativa</span>
+                <h2 class="section-title">¿Qué es Control Vial?</h2>
+                <p class="section-description">
+                    Un sistema innovador de gestión vehicular que utiliza tecnología RFID para mejorar la movilidad y seguridad en San Pedro Garza García.
+                </p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card card-hover">
+                    <div class="about-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="12" fill="#E8F0FE"/>
+                            <path d="M24 14C18.48 14 14 18.48 14 24C14 29.52 18.48 34 24 34C29.52 34 34 29.52 34 24C34 18.48 29.52 14 24 14ZM24 32C19.59 32 16 28.41 16 24C16 19.59 19.59 16 24 16C28.41 16 32 19.59 32 24C32 28.41 28.41 32 24 32Z" fill="#005A9C"/>
+                            <path d="M24 20C21.79 20 20 21.79 20 24C20 26.21 21.79 28 24 28C26.21 28 28 26.21 28 24C28 21.79 26.21 20 24 20Z" fill="#005A9C"/>
+                        </svg>
+                    </div>
+                    <h3>Identificación Automática</h3>
+                    <p>Los vehículos registrados son identificados automáticamente mediante tecnología RFID al circular por las vías autorizadas.</p>
+                </div>
+                <div class="about-card card-hover">
+                    <div class="about-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="12" fill="#E8F5E9"/>
+                            <path d="M20 26L22 28L28 22M34 24C34 29.5228 29.5228 34 24 34C18.4772 34 14 29.5228 14 24C14 18.4772 18.4772 14 24 14C29.5228 14 34 18.4772 34 24Z" stroke="#34A853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Validación de Residencia</h3>
+                    <p>Solo vehículos de residentes con predial al corriente pueden acceder a las vías restringidas del municipio.</p>
+                </div>
+                <div class="about-card card-hover">
+                    <div class="about-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="12" fill="#FFF8E1"/>
+                            <path d="M24 14L16 20V30L24 34L32 30V20L24 14Z" stroke="#FBBC04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M24 24V34M24 24L32 20M24 24L16 20" stroke="#FBBC04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Proceso Digital</h3>
+                    <p>Registro 100% en línea desde tu dispositivo móvil o computadora. Rápido, seguro y conveniente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits section-padding" id="beneficios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Ventajas</span>
+                <h2 class="section-title">Beneficios para Ciudadanos</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item reveal-on-scroll">
+                    <div class="benefit-number">01</div>
+                    <div class="benefit-content">
+                        <h3>Acceso Exclusivo</h3>
+                        <p>Circula libremente por las vías autorizadas del municipio sin restricciones.</p>
+                    </div>
+                </div>
+                <div class="benefit-item reveal-on-scroll">
+                    <div class="benefit-number">02</div>
+                    <div class="benefit-content">
+                        <h3>Menos Congestionamiento</h3>
+                        <p>Contribuye a reducir el tráfico vehicular en zonas residenciales.</p>
+                    </div>
+                </div>
+                <div class="benefit-item reveal-on-scroll">
+                    <div class="benefit-number">03</div>
+                    <div class="benefit-content">
+                        <h3>Mayor Seguridad</h3>
+                        <p>Control de acceso que mejora la seguridad en el municipio.</p>
+                    </div>
+                </div>
+                <div class="benefit-item reveal-on-scroll">
+                    <div class="benefit-number">04</div>
+                    <div class="benefit-content">
+                        <h3>Proceso Rápido</h3>
+                        <p>Registro en línea en menos de 5 minutos desde cualquier dispositivo.</p>
+                    </div>
+                </div>
+                <div class="benefit-item reveal-on-scroll">
+                    <div class="benefit-number">05</div>
+                    <div class="benefit-content">
+                        <h3>Opciones de Entrega</h3>
+                        <p>Recoge tu tag en módulos o recíbelo en tu domicilio vía DHL.</p>
+                    </div>
+                </div>
+                <div class="benefit-item reveal-on-scroll">
+                    <div class="benefit-number">06</div>
+                    <div class="benefit-content">
+                        <h3>Pago Seguro</h3>
+                        <p>Pasarela de pago confiable con tarjeta de crédito o débito.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works section-padding" id="como-funciona">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Proceso</span>
+                <h2 class="section-title">¿Cómo Funciona?</h2>
+                <p class="section-description">Obtén tu tag RFID en 4 sencillos pasos</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-item reveal-on-scroll">
+                    <div class="step-visual">
+                        <div class="step-circle">
+                            <span class="step-number">1</span>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Regístrate en la Plataforma</h3>
+                        <p>Crea tu cuenta con tus datos personales, CURP y comprobante de domicilio en San Pedro.</p>
+                        <ul class="step-list">
+                            <li>Datos personales completos</li>
+                            <li>Número de predial para validación</li>
+                            <li>Correo electrónico y teléfono</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-item reveal-on-scroll">
+                    <div class="step-visual">
+                        <div class="step-circle">
+                            <span class="step-number">2</span>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Registra tu Vehículo</h3>
+                        <p>Agrega la información de tu vehículo incluyendo el NIV para verificación automática.</p>
+                        <ul class="step-list">
+                            <li>Marca y modelo del vehículo</li>
+                            <li>NIV (Número de Identificación Vehicular)</li>
+                            <li>Asociación con tu domicilio registrado</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-item reveal-on-scroll">
+                    <div class="step-visual">
+                        <div class="step-circle">
+                            <span class="step-number">3</span>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Realiza el Pago</h3>
+                        <p>Completa el pago seguro de $100 MXN por vehículo y elige tu método de entrega.</p>
+                        <ul class="step-list">
+                            <li>Pago con tarjeta de crédito o débito</li>
+                            <li>Recoger en módulo (gratis)</li>
+                            <li>Envío a domicilio vía DHL (+$150 MXN)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-item reveal-on-scroll">
+                    <div class="step-visual">
+                        <div class="step-circle">
+                            <span class="step-number">4</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Recibe tu Tag RFID</h3>
+                        <p>Obtén tu tag holográfico con número único y colócalo en tu parabrisas.</p>
+                        <ul class="step-list">
+                            <li>Folio de registro único</li>
+                            <li>Tag RFID con holograma de seguridad</li>
+                            <li>Instrucciones de colocación</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Showcase -->
+    <section class="features section-padding">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-visual reveal-on-scroll">
+                    <div class="feature-image-wrapper">
+                        <div class="feature-glow"></div>
+                        <img src="Assets/logo.png" alt="App Preview" class="feature-image">
+                    </div>
+                </div>
+                <div class="feature-content reveal-on-scroll">
+                    <span class="section-badge">Tecnología</span>
+                    <h2 class="section-title">Plataforma Digital Intuitiva</h2>
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h4>Interfaz Amigable</h4>
+                                <p>Diseño moderno y fácil de usar desde cualquier dispositivo</p>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h4>Gestión Completa</h4>
+                                <p>Administra múltiples vehículos y direcciones desde un solo lugar</p>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h4>Notificaciones en Tiempo Real</h4>
+                                <p>Recibe actualizaciones sobre el estado de tu registro</p>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h4>Soporte 24/7</h4>
+                                <p>Asistencia disponible en nuestros centros de atención</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="index.html" class="btn btn-primary">Comenzar Ahora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Centers Section -->
+    <section class="centers section-padding" id="centros">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Ubicaciones</span>
+                <h2 class="section-title">Centros de Atención</h2>
+                <p class="section-description">Visítanos para recoger tu tag o resolver cualquier duda</p>
+            </div>
+            <div class="centers-grid">
+                <div class="center-card reveal-on-scroll">
+                    <div class="center-status">
+                        <span class="status-badge status-open">Abierto</span>
+                    </div>
+                    <h3>Módulo Central</h3>
+                    <div class="center-info">
+                        <div class="info-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 10C11.3807 10 12.5 8.88071 12.5 7.5C12.5 6.11929 11.3807 5 10 5C8.61929 5 7.5 6.11929 7.5 7.5C7.5 8.88071 8.61929 10 10 10Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 17.5C10 17.5 15 13.75 15 9.16667C15 6.40524 12.7614 4.16667 10 4.16667C7.23858 4.16667 5 6.40524 5 9.16667C5 13.75 10 17.5 10 17.5Z" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <span>Av. Ejemplo 456, Col. Centro</span>
+                        </div>
+                        <div class="info-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 6.66667V10L12.5 11.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <span>Lun - Vie: 9:00 - 18:00 | Sáb: 9:00 - 14:00</span>
+                        </div>
+                        <div class="info-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5.83333 7.5H14.1667C15.0871 7.5 15.8333 8.24619 15.8333 9.16667V14.1667C15.8333 15.0871 15.0871 15.8333 14.1667 15.8333H5.83333C4.91286 15.8333 4.16667 15.0871 4.16667 14.1667V9.16667C4.16667 8.24619 4.91286 7.5 5.83333 7.5Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M13.3333 7.5V5.83333C13.3333 4.91286 12.5871 4.16667 11.6667 4.16667H8.33333C7.41286 4.16667 6.66667 4.91286 6.66667 5.83333V7.5" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <span>(81) 1234-5678</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-card reveal-on-scroll">
+                    <div class="center-status">
+                        <span class="status-badge status-open">Abierto</span>
+                    </div>
+                    <h3>Módulo Norte</h3>
+                    <div class="center-info">
+                        <div class="info-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 10C11.3807 10 12.5 8.88071 12.5 7.5C12.5 6.11929 11.3807 5 10 5C8.61929 5 7.5 6.11929 7.5 7.5C7.5 8.88071 8.61929 10 10 10Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 17.5C10 17.5 15 13.75 15 9.16667C15 6.40524 12.7614 4.16667 10 4.16667C7.23858 4.16667 5 6.40524 5 9.16667C5 13.75 10 17.5 10 17.5Z" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <span>Av. Norte 789, Col. Norte</span>
+                        </div>
+                        <div class="info-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 6.66667V10L12.5 11.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <span>Lun - Vie: 9:00 - 18:00 | Sáb: 9:00 - 14:00</span>
+                        </div>
+                        <div class="info-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5.83333 7.5H14.1667C15.0871 7.5 15.8333 8.24619 15.8333 9.16667V14.1667C15.8333 15.0871 15.0871 15.8333 14.1667 15.8333H5.83333C4.91286 15.8333 4.16667 15.0871 4.16667 14.1667V9.16667C4.16667 8.24619 4.91286 7.5 5.83333 7.5Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M13.3333 7.5V5.83333C13.3333 4.91286 12.5871 4.16667 11.6667 4.16667H8.33333C7.41286 4.16667 6.66667 4.91286 6.66667 5.83333V7.5" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <span>(81) 2345-6789</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-card reveal-on-scroll">
+                    <div class="center-status">
+                        <span class="status-badge status-closed">Cerrado</span>
+                    </div>
+                    <h3>Módulo Sur</h3>
+                    <div class="center-info">
+                        <div class="info-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 10C11.3807 10 12.5 8.88071 12.5 7.5C12.5 6.11929 11.3807 5 10 5C8.61929 5 7.5 6.11929 7.5 7.5C7.5 8.88071 8.61929 10 10 10Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 17.5C10 17.5 15 13.75 15 9.16667C15 6.40524 12.7614 4.16667 10 4.16667C7.23858 4.16667 5 6.40524 5 9.16667C5 13.75 10 17.5 10 17.5Z" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <span>Av. Sur 321, Col. Sur</span>
+                        </div>
+                        <div class="info-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 6.66667V10L12.5 11.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <span>Lun - Vie: 9:00 - 18:00 | Sáb: 9:00 - 14:00</span>
+                        </div>
+                        <div class="info-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5.83333 7.5H14.1667C15.0871 7.5 15.8333 8.24619 15.8333 9.16667V14.1667C15.8333 15.0871 15.0871 15.8333 14.1667 15.8333H5.83333C4.91286 15.8333 4.16667 15.0871 4.16667 14.1667V9.16667C4.16667 8.24619 4.91286 7.5 5.83333 7.5Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M13.3333 7.5V5.83333C13.3333 4.91286 12.5871 4.16667 11.6667 4.16667H8.33333C7.41286 4.16667 6.66667 4.91286 6.66667 5.83333V7.5" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <span>(81) 3456-7890</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-padding" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Preguntas Frecuentes</span>
+                <h2 class="section-title">¿Tienes Dudas?</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item reveal-on-scroll">
+                    <button class="faq-question">
+                        <span>¿Cuánto cuesta el registro de mi vehículo?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>El costo de registro es de $100 MXN por vehículo. Si eliges envío a domicilio vía DHL, tiene un costo adicional de $150 MXN.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-on-scroll">
+                    <button class="faq-question">
+                        <span>¿Qué documentos necesito para registrarme?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Necesitas tu CURP, número de predial de tu propiedad en San Pedro, y el NIV (Número de Identificación Vehicular) de tu vehículo.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-on-scroll">
+                    <button class="faq-question">
+                        <span>¿Cuánto tiempo tarda en llegar mi tag?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Si eliges recoger en módulo, puedes obtenerlo el mismo día presentando tu folio. Si eliges envío a domicilio, DHL lo entrega en 2-3 días hábiles.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-on-scroll">
+                    <button class="faq-question">
+                        <span>¿Puedo registrar varios vehículos?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, puedes registrar todos los vehículos que necesites desde tu cuenta. Cada vehículo requiere un pago individual de $100 MXN.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-on-scroll">
+                    <button class="faq-question">
+                        <span>¿Qué pasa si no tengo el tag?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Los vehículos sin tag RFID no podrán circular por las vías restringidas del municipio. El personal de tránsito puede verificar visualmente la calcomanía.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-on-scroll">
+                    <button class="faq-question">
+                        <span>¿El tag tiene fecha de vencimiento?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>El tag es válido mientras tu predial esté al corriente y el vehículo esté registrado a tu nombre en la dirección validada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal-on-scroll">
+                <h2>¿Listo para Registrar tu Vehículo?</h2>
+                <p>Únete a los miles de ciudadanos que ya forman parte de un San Pedro más ordenado y eficiente</p>
+                <a href="index.html" class="btn btn-white btn-large">
+                    <span>Comenzar Registro</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <img src="Assets/logo.png" alt="San Pedro Logo" class="footer-logo">
+                        <h3>Control Vial</h3>
+                    </div>
+                    <p>Sistema inteligente de gestión vehicular para San Pedro Garza García</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                        <li><a href="#como-funciona">Cómo Funciona</a></li>
+                        <li><a href="index.html">Acceder a la App</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Soporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="#centros">Centros de Atención</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-contact">
+                        <li>📞 (81) 1234-5678</li>
+                        <li>✉️ contacto@sanpedro.gob.mx</li>
+                        <li>📍 San Pedro Garza García, N.L.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Municipio de San Pedro Garza García. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="landing.js"></script>
+</body>
+</html>
