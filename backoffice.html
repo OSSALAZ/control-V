@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice - Control Vial San Pedro</title>
+    <link rel="stylesheet" href="backoffice.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-screen active">
+        <div class="login-container">
+            <div class="login-brand">
+                <img src="Assets/logo.png" alt="Logo San Pedro" class="login-logo">
+                <h1>Control Vial</h1>
+                <p>Backoffice Ciudadanos</p>
+            </div>
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="login-email">Correo Electrónico</label>
+                    <input type="email" id="login-email" required placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Contraseña</label>
+                    <input type="password" id="login-password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                <a href="landing.html" class="login-link">← Volver al sitio</a>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div id="app" class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="Assets/logo.png" alt="Logo" class="sidebar-logo">
+                <span class="sidebar-title">Control Vial</span>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-module="dashboard">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-module="profile">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Mi Perfil</span>
+                </a>
+                <a href="#" class="nav-item" data-module="addresses">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Mis Direcciones</span>
+                </a>
+                <a href="#" class="nav-item" data-module="vehicles">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 17h14v-5H5v5zM3 19h18M7 19v2m10-2v2M5 12l3-6h8l3 6"></path>
+                        <circle cx="7.5" cy="15.5" r="1.5"></circle>
+                        <circle cx="16.5" cy="15.5" r="1.5"></circle>
+                    </svg>
+                    <span>Mis Vehículos</span>
+                </a>
+                <a href="#" class="nav-item" data-module="request-tag">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    <span>Solicitar Tag</span>
+                </a>
+                <a href="#" class="nav-item" data-module="requests">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                    <span>Mis Solicitudes</span>
+                </a>
+                <a href="#" class="nav-item" data-module="payments">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                    </svg>
+                    <span>Historial de Pagos</span>
+                </a>
+                <a href="#" class="nav-item" data-module="centers">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>Centros de Atención</span>
+                </a>
+                <a href="#" class="nav-item" data-module="help">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span>Ayuda</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navbar -->
+            <header class="topbar">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="topbar-search">
+                    <input type="text" placeholder="Buscar..." class="search-input">
+                </div>
+                <div class="topbar-actions">
+                    <button class="topbar-btn notification-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="topbar-user">
+                        <img src="https://ui-avatars.com/api/?name=Usuario&background=005A9C&color=fff" alt="Usuario"
+                            class="user-avatar">
+                        <span class="user-name" id="topbarUserName">Usuario</span>
+                        <button class="user-menu-btn" id="userMenuBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <a href="#" class="dropdown-item" data-module="profile">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                Mi Perfil
+                            </a>
+                            <a href="#" class="dropdown-item" id="logoutBtn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>
+                                Cerrar Sesión
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard Module -->
+                <div id="module-dashboard" class="module active">
+                    <div class="module-header">
+                        <h1>Dashboard</h1>
+                        <p>Resumen de tu cuenta y actividad</p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #E8F5E9;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#34A853" stroke-width="2">
+                                    <path d="M5 17h14v-5H5v5zM3 19h18M7 19v2m10-2v2M5 12l3-6h8l3 6"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-label">Vehículos Registrados</div>
+                                <div class="stat-value" id="statVehicles">0</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #E8F0FE;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#4285F4" stroke-width="2">
+                                    <path
+                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-label">Solicitudes Activas</div>
+                                <div class="stat-value" id="statRequests">0</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #FFF8E1;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#FBBC04" stroke-width="2">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-label">Pagos Realizados</div>
+                                <div class="stat-value" id="statPayments">$0</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #FCE8E6;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#EA4335" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-label">Direcciones</div>
+                                <div class="stat-value" id="statAddresses">0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="quick-actions-card card">
+                            <h3>Accesos Rápidos</h3>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" data-module="vehicles">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                    Agregar Vehículo
+                                </button>
+                                <button class="quick-action-btn" data-module="request-tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+                                        </path>
+                                    </svg>
+                                    Solicitar Tag
+                                </button>
+                                <button class="quick-action-btn" data-module="requests">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                    </svg>
+                                    Ver Solicitudes
+                                </button>
+                                <button class="quick-action-btn" data-module="addresses">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    </svg>
+                                    Agregar Dirección
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="recent-activity-card card">
+                            <h3>Actividad Reciente</h3>
+                            <div class="activity-list" id="activityList">
+                                <div class="activity-item">
+                                    <div class="activity-icon success">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Bienvenido al sistema</div>
+                                        <div class="activity-time">Hace unos momentos</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Module -->
+                <div id="module-profile" class="module">
+                    <div class="module-header">
+                        <h1>Mi Perfil</h1>
+                        <button class="btn btn-primary" onclick="editProfile()">Editar Perfil</button>
+                    </div>
+
+                    <div class="profile-grid">
+                        <div class="card profile-card">
+                            <div class="profile-avatar-section">
+                                <img src="https://ui-avatars.com/api/?name=Usuario&background=005A9C&color=fff&size=120"
+                                    alt="Avatar" class="profile-avatar" id="profileAvatar">
+                                <button class="btn btn-secondary btn-sm">Cambiar Foto</button>
+                            </div>
+                        </div>
+                        <div class="card profile-info-card">
+                            <h3>Información Personal</h3>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Nombre Completo</label>
+                                    <div class="info-value" id="profileName">-</div>
+                                </div>
+                                <div class="info-item">
+                                    <label>CURP</label>
+                                    <div class="info-value" id="profileCurp">-</div>
+                                </div>
+                                <div class="info-item">
+                                    <label>RFC</label>
+                                    <div class="info-value" id="profileRfc">-</div>
+                                </div>
+                                <div class="info-item">
+                                    <label>Email</label>
+                                    <div class="info-value" id="profileEmail">-</div>
+                                </div>
+                                <div class="info-item">
+                                    <label>Teléfono</label>
+                                    <div class="info-value" id="profilePhone">-</div>
+                                </div>
+                                <div class="info-item">
+                                    <label>Fecha de Registro</label>
+                                    <div class="info-value" id="profileRegistered">-</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Addresses Module -->
+                <div id="module-addresses" class="module">
+                    <div class="module-header">
+                        <h1>Mis Direcciones</h1>
+                        <button class="btn btn-primary" onclick="openAddressModal()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Agregar Dirección
+                        </button>
+                    </div>
+
+                    <div class="card">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Dirección</th>
+                                        <th>Predial</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="addressesTable">
+                                    <tr>
+                                        <td colspan="4" class="empty-state">No hay direcciones registradas</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicles Module -->
+                <div id="module-vehicles" class="module">
+                    <div class="module-header">
+                        <h1>Mis Vehículos</h1>
+                        <button class="btn btn-primary" onclick="openVehicleModal()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Agregar Vehículo
+                        </button>
+                    </div>
+
+                    <div class="card">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Vehículo</th>
+                                        <th>Placa</th>
+                                        <th>NIV</th>
+                                        <th>Estado Tag</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="vehiclesTable">
+                                    <tr>
+                                        <td colspan="5" class="empty-state">No hay vehículos registrados</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Request Tag Module -->
+                <div id="module-request-tag" class="module">
+                    <div class="module-header">
+                        <h1>Solicitar Tag RFID</h1>
+                    </div>
+
+                    <div class="tag-request-wizard">
+                        <div class="wizard-steps">
+                            <div class="wizard-step active" data-step="1">
+                                <div class="step-number">1</div>
+                                <div class="step-label">Vehículo</div>
+                            </div>
+                            <div class="wizard-step" data-step="2">
+                                <div class="step-number">2</div>
+                                <div class="step-label">Dirección</div>
+                            </div>
+                            <div class="wizard-step" data-step="3">
+                                <div class="step-number">3</div>
+                                <div class="step-label">Entrega</div>
+                            </div>
+                            <div class="wizard-step" data-step="4">
+                                <div class="step-number">4</div>
+                                <div class="step-label">Pago</div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-content">
+                            <!-- Step 1: Select Vehicle -->
+                            <div class="wizard-panel active" data-panel="1">
+                                <div class="card">
+                                    <h3>Selecciona el Vehículo</h3>
+                                    <div class="form-group">
+                                        <label>Vehículo</label>
+                                        <select id="tagVehicleSelect" class="form-control">
+                                            <option value="">Selecciona un vehículo</option>
+                                        </select>
+                                        <small>Solo vehículos sin tag activo</small>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="nextWizardStep()">Siguiente</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Confirm Address -->
+                            <div class="wizard-panel" data-panel="2">
+                                <div class="card">
+                                    <h3>Confirma la Dirección</h3>
+                                    <div class="form-group">
+                                        <label>Dirección de Registro</label>
+                                        <select id="tagAddressSelect" class="form-control">
+                                            <option value="">Selecciona una dirección</option>
+                                        </select>
+                                    </div>
+                                    <div class="button-group">
+                                        <button class="btn btn-secondary" onclick="prevWizardStep()">Anterior</button>
+                                        <button class="btn btn-primary" onclick="nextWizardStep()">Siguiente</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Delivery Method -->
+                            <div class="wizard-panel" data-panel="3">
+                                <div class="card">
+                                    <h3>Método de Entrega</h3>
+                                    <div class="delivery-options">
+                                        <label class="delivery-option">
+                                            <input type="radio" name="delivery" value="pickup" checked>
+                                            <div class="option-content">
+                                                <div class="option-title">Recoger en Módulo</div>
+                                                <div class="option-description">Gratis - Acude a cualquier centro de
+                                                    atención</div>
+                                                <div class="option-price">$0 MXN</div>
+                                            </div>
+                                        </label>
+                                        <label class="delivery-option">
+                                            <input type="radio" name="delivery" value="delivery">
+                                            <div class="option-content">
+                                                <div class="option-title">Envío a Domicilio</div>
+                                                <div class="option-description">Recíbelo vía DHL en 2-3 días hábiles
+                                                </div>
+                                                <div class="option-price">+$150 MXN</div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="button-group">
+                                        <button class="btn btn-secondary" onclick="prevWizardStep()">Anterior</button>
+                                        <button class="btn btn-primary" onclick="nextWizardStep()">Siguiente</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 4: Payment -->
+                            <div class="wizard-panel" data-panel="4">
+                                <div class="payment-grid">
+                                    <div class="card">
+                                        <h3>Resumen de Compra</h3>
+                                        <div class="payment-summary">
+                                            <div class="summary-item">
+                                                <span>Registro de Tag</span>
+                                                <span>$100.00 MXN</span>
+                                            </div>
+                                            <div class="summary-item" id="deliveryCostItem" style="display: none;">
+                                                <span>Envío DHL</span>
+                                                <span>$150.00 MXN</span>
+                                            </div>
+                                            <div class="summary-divider"></div>
+                                            <div class="summary-item total">
+                                                <span>Total</span>
+                                                <span id="totalAmount">$100.00 MXN</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <h3>Método de Pago</h3>
+                                        <form id="paymentForm">
+                                            <div class="form-group">
+                                                <label>Número de Tarjeta</label>
+                                                <input type="text" class="form-control" maxlength="19"
+                                                    placeholder="1234 5678 9012 3456" required>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label>Vencimiento</label>
+                                                    <input type="text" class="form-control" maxlength="5"
+                                                        placeholder="MM/AA" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>CVV</label>
+                                                    <input type="text" class="form-control" maxlength="3"
+                                                        placeholder="123" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Nombre en Tarjeta</label>
+                                                <input type="text" class="form-control" placeholder="TITULAR" required>
+                                            </div>
+                                            <div class="button-group">
+                                                <button type="button" class="btn btn-secondary"
+                                                    onclick="prevWizardStep()">Anterior</button>
+                                                <button type="submit" class="btn btn-primary">Procesar Pago</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Requests Module -->
+                <div id="module-requests" class="module">
+                    <div class="module-header">
+                        <h1>Mis Solicitudes</h1>
+                    </div>
+
+                    <div class="card">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Folio</th>
+                                        <th>Vehículo</th>
+                                        <th>Fecha</th>
+                                        <th>Estado</th>
+                                        <th>Monto</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="requestsTable">
+                                    <tr>
+                                        <td colspan="6" class="empty-state">No hay solicitudes registradas</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payments Module -->
+                <div id="module-payments" class="module">
+                    <div class="module-header">
+                        <h1>Historial de Pagos</h1>
+                    </div>
+
+                    <div class="card">
+                        <div class="filters-bar">
+                            <input type="text" class="search-input" placeholder="Buscar por folio...">
+                            <select class="form-control" style="width: 200px;">
+                                <option value="">Todos los estados</option>
+                                <option value="completado">Completado</option>
+                                <option value="pendiente">Pendiente</option>
+                            </select>
+                        </div>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Folio</th>
+                                        <th>Concepto</th>
+                                        <th>Fecha</th>
+                                        <th>Monto</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="paymentsTable">
+                                    <tr>
+                                        <td colspan="6" class="empty-state">No hay pagos registrados</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centers Module -->
+                <div id="module-centers" class="module">
+                    <div class="module-header">
+                        <h1>Centros de Atención</h1>
+                    </div>
+
+                    <div class="centers-grid">
+                        <div class="card center-item">
+                            <div class="center-badge open">Abierto</div>
+                            <h3>Módulo Central</h3>
+                            <div class="center-info">
+                                <p><strong>📍 Dirección:</strong> Av. Ejemplo 456, Col. Centro</p>
+                                <p><strong>🕒 Horario:</strong> Lun-Vie: 9:00-18:00 | Sáb: 9:00-14:00</p>
+                                <p><strong>☎ Teléfono:</strong> (81) 1234-5678</p>
+                            </div>
+                            <button class="btn btn-secondary btn-block">Ver en Mapa</button>
+                        </div>
+                        <div class="card center-item">
+                            <div class="center-badge open">Abierto</div>
+                            <h3>Módulo Norte</h3>
+                            <div class="center-info">
+                                <p><strong>📍 Dirección:</strong> Av. Norte 789, Col. Norte</p>
+                                <p><strong>🕒 Horario:</strong> Lun-Vie: 9:00-18:00 | Sáb: 9:00-14:00</p>
+                                <p><strong>☎ Teléfono:</strong> (81) 2345-6789</p>
+                            </div>
+                            <button class="btn btn-secondary btn-block">Ver en Mapa</button>
+                        </div>
+                        <div class="card center-item">
+                            <div class="center-badge closed">Cerrado</div>
+                            <h3>Módulo Sur</h3>
+                            <div class="center-info">
+                                <p><strong>📍 Dirección:</strong> Av. Sur 321, Col. Sur</p>
+                                <p><strong>🕒 Horario:</strong> Lun-Vie: 9:00-18:00 | Sáb: 9:00-14:00</p>
+                                <p><strong>☎ Teléfono:</strong> (81) 3456-7890</p>
+                            </div>
+                            <button class="btn btn-secondary btn-block">Ver en Mapa</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help Module -->
+                <div id="module-help" class="module">
+                    <div class="module-header">
+                        <h1>Ayuda y Soporte</h1>
+                    </div>
+
+                    <div class="help-grid">
+                        <div class="card">
+                            <h3>Preguntas Frecuentes</h3>
+                            <div class="faq-list">
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        ¿Cómo registro un vehículo?
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p>Ve a la sección "Mis Vehículos" y haz clic en "Agregar Vehículo". Completa el
+                                            formulario con los datos de tu vehículo.</p>
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        ¿Cuánto cuesta el tag RFID?
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p>El costo es de $100 MXN. Si eliges envío a domicilio, el costo adicional es
+                                            de $150 MXN.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h3>Contacto</h3>
+                            <form class="contact-form">
+                                <div class="form-group">
+                                    <label>Asunto</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Mensaje</label>
+                                    <textarea class="form-control" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <!-- Address Modal -->
+    <div class="modal" id="addressModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="addressModalTitle">Agregar Dirección</h3>
+                    <button class="modal-close" onclick="closeModal('addressModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="addressForm">
+                        <input type="hidden" id="addressId">
+                        <div class="form-group">
+                            <label>Nombre de la Dirección</label>
+                            <input type="text" id="addressName" class="form-control" placeholder="Casa, Oficina, etc."
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label>Número de Predial</label>
+                            <input type="text" id="addressPredial" class="form-control" placeholder="12345-67890"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label>Calle</label>
+                            <input type="text" id="addressStreet" class="form-control" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Número Exterior</label>
+                                <input type="text" id="addressExterior" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Número Interior</label>
+                                <input type="text" id="addressInterior" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="closeModal('addressModal')">Cancelar</button>
+                    <button class="btn btn-primary" onclick="saveAddress()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vehicle Modal -->
+    <div class="modal" id="vehicleModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="vehicleModalTitle">Agregar Vehículo</h3>
+                    <button class="modal-close" onclick="closeModal('vehicleModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="vehicleForm">
+                        <input type="hidden" id="vehicleId">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Marca</label>
+                                <input type="text" id="vehicleMake" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Modelo</label>
+                                <input type="text" id="vehicleModel" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Año</label>
+                                <input type="number" id="vehicleYear" class="form-control" min="1950" max="2025"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label>Color</label>
+                                <input type="text" id="vehicleColor" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>NIV</label>
+                            <input type="text" id="vehicleNiv" class="form-control" maxlength="17" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Placa</label>
+                            <input type="text" id="vehiclePlate" class="form-control">
+                            <small>Se llenará automáticamente al validar el NIV</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Dirección Asociada</label>
+                            <select id="vehicleAddress" class="form-control" required>
+                                <option value="">Selecciona una dirección</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="closeModal('vehicleModal')">Cancelar</button>
+                    <button class="btn btn-primary" onclick="saveVehicle()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Details Modal -->
+    <div class="modal" id="requestModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Detalles de Solicitud</h3>
+                    <button class="modal-close" onclick="closeModal('requestModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="requestDetails"></div>
+                    <div class="timeline" id="requestTimeline"></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="closeModal('requestModal')">Cerrar</button>
+                    <button class="btn btn-primary">Descargar Comprobante</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <div class="toast-icon"></div>
+            <div class="toast-message"></div>
+        </div>
+    </div>
+
+    <script src="backoffice.js"></script>
+</body>
+
+</html>
