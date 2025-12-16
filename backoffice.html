@@ -15,24 +15,68 @@
 <body>
     <!-- Login Screen -->
     <div id="login-screen" class="login-screen active">
-        <div class="login-container">
-            <div class="login-brand">
-                <img src="Assets/logo.png" alt="Logo San Pedro" class="login-logo">
-                <h1>Control Vial</h1>
-                <p>Backoffice Ciudadanos</p>
+        <!-- Left Side - Illustration -->
+        <div class="login-left">
+            <div class="login-illustration">
+                <img src=".gemini/antigravity/brain/c436e9bb-a1f4-47fd-ae6c-cc242795d404/login_illustration_1765913488027.png"
+                    alt="Control Vial Illustration">
+                <h1>Control Vial<br>San Pedro</h1>
+                <p>Sistema inteligente de gestión vehicular para una ciudad más ordenada y segura</p>
             </div>
-            <form id="login-form" class="login-form">
-                <div class="form-group">
-                    <label for="login-email">Correo Electrónico</label>
-                    <input type="email" id="login-email" required placeholder="tu@email.com">
+        </div>
+
+        <!-- Right Side - Form -->
+        <div class="login-right">
+            <div class="login-container">
+                <div class="login-brand">
+                    <img src="Assets/logo.png" alt="Logo San Pedro" class="login-logo">
+                    <h1>Bienvenido</h1>
+                    <p>Ingresa a tu cuenta para continuar</p>
                 </div>
-                <div class="form-group">
-                    <label for="login-password">Contraseña</label>
-                    <input type="password" id="login-password" required placeholder="••••••••">
+                <form id="login-form" class="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Correo Electrónico</label>
+                        <input type="email" id="login-email" required placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" required placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </form>
+                <a href="landing.html" class="login-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="width: 16px; height: 16px;">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Volver al sitio
+                </a>
+
+                <div class="login-features">
+                    <h3>¿Qué puedes hacer?</h3>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Registrar y gestionar tus vehículos
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Solicitar tags RFID en línea
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Rastrear el estado de tus solicitudes
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
-                <a href="landing.html" class="login-link">← Volver al sitio</a>
-            </form>
+            </div>
         </div>
     </div>
 
